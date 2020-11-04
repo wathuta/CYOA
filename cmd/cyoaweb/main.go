@@ -22,7 +22,7 @@ func main() {
 	if err != nil {
 		log.Println("unable to unmarshal json")
 	}
-	sh := cyoa.NewHandler(story)
+	sh := cyoa.NewHandler(story, cyoa.WithTemplate(nil))
 
 	log.Fatal(http.ListenAndServe("localhost:"+fmt.Sprintf("%d", *port), sh))
 }
